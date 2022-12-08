@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:assignment_task/screens/onboard/onboard_screen1.dart';
+import 'package:assignment_task/screens/onboard/onboard_screen.dart';
 import 'package:assignment_task/utils/ui_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,7 +20,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => OnboardScreen1(),
+          builder: (context) => OnboardScreen(),
         ),
       );
     });

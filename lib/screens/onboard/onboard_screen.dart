@@ -1,16 +1,17 @@
 import 'package:assignment_task/content_model.dart';
+import 'package:assignment_task/screens/login/login_screen.dart';
 import 'package:assignment_task/utils/ui_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class OnboardScreen1 extends StatefulWidget {
-  const OnboardScreen1({Key? key}) : super(key: key);
+class OnboardScreen extends StatefulWidget {
+  const OnboardScreen({Key? key}) : super(key: key);
 
   @override
-  State<OnboardScreen1> createState() => _OnboardScreen1State();
+  State<OnboardScreen> createState() => _OnboardScreenState();
 }
 
-class _OnboardScreen1State extends State<OnboardScreen1> {
+class _OnboardScreenState extends State<OnboardScreen> {
   List<UnbordingContents> contents = [
     UnbordingContents(
         image: "assets/images/img1.png",
@@ -145,7 +146,14 @@ class _OnboardScreen1State extends State<OnboardScreen1> {
             child: GestureDetector(
               behavior: HitTestBehavior.translucent,
               onTap: () {
-                if (currentIndex == contents.length - 1) {}
+                if (currentIndex == contents.length - 1) {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => LoginScreen(),
+                    ),
+                  );
+                }
                 _controller!.nextPage(
                     duration: Duration(milliseconds: 100),
                     curve: Curves.bounceIn);
@@ -184,7 +192,7 @@ class _OnboardScreen1State extends State<OnboardScreen1> {
       margin: EdgeInsets.only(right: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: appUiColor,
+        color: currentIndex == index ? appUiColor : Colors.blue.shade200,
       ),
     );
   }

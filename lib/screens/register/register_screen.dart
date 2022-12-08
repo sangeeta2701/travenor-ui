@@ -1,17 +1,17 @@
-import 'package:assignment_task/screens/Home/home.dart';
-import 'package:assignment_task/screens/register/register_screen.dart';
 import 'package:assignment_task/utils/ui_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class LoginScreen extends StatefulWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+import '../login/login_screen.dart';
+
+class RegisterScreen extends StatefulWidget {
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
-  State<LoginScreen> createState() => _LoginScreenState();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _LoginScreenState extends State<LoginScreen> {
+class _RegisterScreenState extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -48,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Sign in now",
+                        "Sign up now",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.lato(
                           fontSize: 25,
@@ -60,7 +60,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 5,
                       ),
                       Text(
-                        "Please sign in to continue our app",
+                        "Please fill the details and create account",
                         textAlign: TextAlign.center,
                         style: GoogleFonts.lato(
                           fontSize: 16,
@@ -70,6 +70,32 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       SizedBox(
                         height: 30,
+                      ),
+                      Container(
+                        height: 55,
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(14),
+                          color: appUiContainerColor,
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: TextFormField(
+                              style: GoogleFonts.lato(
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.w400,
+                                  color: appUiDarkColor),
+                              keyboardType: TextInputType.name,
+                              decoration: InputDecoration(
+                                  hintText: "Name", border: InputBorder.none),
+                            ),
+                          ),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 20,
                       ),
                       Container(
                         height: 55,
@@ -128,23 +154,6 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 15,
-                      ),
-                      Align(
-                        alignment: Alignment.centerRight,
-                        child: TextButton(
-                          onPressed: () {},
-                          child: Text(
-                            "Forget Password?",
-                            style: GoogleFonts.lato(
-                              fontSize: 16,
-                              fontWeight: FontWeight.w500,
-                              color: appUiColor,
-                            ),
-                          ),
-                        ),
-                      ),
-                      SizedBox(
                         height: 30,
                       ),
                       GestureDetector(
@@ -153,7 +162,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Home(),
+                              builder: (context) => LoginScreen(),
                             ),
                           );
                         },
@@ -166,7 +175,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                           child: Center(
                             child: Text(
-                              "Sign In",
+                              "Sign Up",
                               style: GoogleFonts.lato(
                                 fontSize: 16,
                                 fontWeight: FontWeight.w500,
@@ -183,7 +192,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Text(
-                            "Don't have an account? ",
+                            "Already have an account? ",
                             style: GoogleFonts.lato(
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
@@ -195,12 +204,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => RegisterScreen(),
+                                    builder: (context) => LoginScreen(),
                                   ),
                                 );
                               },
                               child: Text(
-                                "Sign Up",
+                                "Sign In",
                                 style: GoogleFonts.lato(
                                   fontSize: 16,
                                   fontWeight: FontWeight.w500,
@@ -221,7 +230,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                       ),
                       SizedBox(
-                        height: 45,
+                        height: 30,
                       ),
                       SizedBox(
                         height: 50,

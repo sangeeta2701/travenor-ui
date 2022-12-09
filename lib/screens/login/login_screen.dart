@@ -1,3 +1,4 @@
+import 'package:assignment_task/screens/Forget%20pass/forget_password_screen.dart';
 import 'package:assignment_task/screens/Home/home.dart';
 import 'package:assignment_task/screens/register/register_screen.dart';
 import 'package:assignment_task/utils/ui_constants.dart';
@@ -133,7 +134,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       Align(
                         alignment: Alignment.centerRight,
                         child: TextButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => ForgetPasswordScreen(),
+                              ),
+                            );
+                          },
                           child: Text(
                             "Forget Password?",
                             style: GoogleFonts.lato(

@@ -17,7 +17,7 @@ class ForgetPassDialog extends StatelessWidget {
 
   dialogContent(BuildContext context) {
     return Container(
-      height: 250,
+      height: 200,
       width: MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         color: appLightColor,
@@ -34,8 +34,8 @@ class ForgetPassDialog extends StatelessWidget {
                 BoxDecoration(color: appUiColor, shape: BoxShape.circle),
             child: Icon(
               Icons.markunread_mailbox_outlined,
-              size: 80,
-              color: appUiColor,
+              size: 20,
+              color: appLightColor,
             ),
           ),
           SizedBox(

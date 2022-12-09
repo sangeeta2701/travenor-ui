@@ -1,3 +1,4 @@
+import 'package:assignment_task/screens/Home/Home%20screen/home_detail_screen.dart';
 import 'package:assignment_task/utils/ui_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -139,7 +140,14 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: [
                       GestureDetector(
                         behavior: HitTestBehavior.translucent,
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HomeDetailScreen(),
+                            ),
+                          );
+                        },
                         child: Container(
                           height: 380,
                           width: 260,
